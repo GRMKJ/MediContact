@@ -29,13 +29,14 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelUser = new javax.swing.JLabel();
-        Exit = new javax.swing.JButton();
-        Name = new javax.swing.JLabel();
-        User = new javax.swing.JLabel();
-        Pass = new javax.swing.JLabel();
+        JButtonExit = new javax.swing.JButton();
+        LabelName = new javax.swing.JLabel();
+        LabelUser = new javax.swing.JLabel();
+        LabelPass = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButtonRegister = new javax.swing.JButton();
+        jButtonLogin = new javax.swing.JButton();
         jLabelBack = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,32 +48,32 @@ public class Login extends javax.swing.JFrame {
         jLabelUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono.png"))); // NOI18N
         getContentPane().add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 210, 280));
 
-        Exit.setBackground(new java.awt.Color(153, 153, 255));
-        Exit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Exit.setText("Exit");
-        Exit.setToolTipText("");
-        Exit.addActionListener(new java.awt.event.ActionListener() {
+        JButtonExit.setBackground(new java.awt.Color(153, 153, 255));
+        JButtonExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        JButtonExit.setText("Exit");
+        JButtonExit.setToolTipText("");
+        JButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitActionPerformed(evt);
+                JButtonExitActionPerformed(evt);
             }
         });
-        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 60, 30));
+        getContentPane().add(JButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 60, 30));
 
-        Name.setFont(new java.awt.Font("Bauhaus 93", 0, 48)); // NOI18N
-        Name.setForeground(new java.awt.Color(204, 204, 255));
-        Name.setText("MediContact");
-        getContentPane().add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 330, 170));
+        LabelName.setFont(new java.awt.Font("Bauhaus 93", 0, 48)); // NOI18N
+        LabelName.setForeground(new java.awt.Color(204, 204, 255));
+        LabelName.setText("MediContact");
+        getContentPane().add(LabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 330, 170));
 
-        User.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        User.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        User.setText("User:");
-        User.setToolTipText("");
-        getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 100, 20));
+        LabelUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        LabelUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        LabelUser.setText("User:");
+        LabelUser.setToolTipText("");
+        getContentPane().add(LabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 100, 20));
 
-        Pass.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Pass.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Pass.setText("Password:");
-        getContentPane().add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 100, 20));
+        LabelPass.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        LabelPass.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        LabelPass.setText("Password:");
+        getContentPane().add(LabelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 100, 20));
 
         jPasswordField1.setText("Password");
         jPasswordField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -91,15 +92,30 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 385, 260, 30));
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jButtonRegister.setBackground(new java.awt.Color(102, 102, 255));
+        jButtonRegister.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonRegister.setText("Register");
+        jButtonRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonRegisterMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 160, 40));
+        jButtonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegisterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, 160, 40));
+
+        jButtonLogin.setBackground(new java.awt.Color(102, 102, 255));
+        jButtonLogin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonLogin.setText("Login");
+        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, 160, 40));
 
         jLabelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         jLabelBack.setToolTipText("");
@@ -109,9 +125,9 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+    private void JButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonExitActionPerformed
         System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_ExitActionPerformed
+    }//GEN-LAST:event_JButtonExitActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -121,9 +137,18 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonLoginActionPerformed
+
+    private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRegisterActionPerformed
+
+    private void jButtonRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegisterMouseClicked
+        this.setVisible(false);
+        new Register().setVisible(true);
+    }//GEN-LAST:event_jButtonRegisterMouseClicked
 
     /**
      * @param args the command line arguments
@@ -161,11 +186,12 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Exit;
-    private javax.swing.JLabel Name;
-    private javax.swing.JLabel Pass;
-    private javax.swing.JLabel User;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton JButtonExit;
+    private javax.swing.JLabel LabelName;
+    private javax.swing.JLabel LabelPass;
+    private javax.swing.JLabel LabelUser;
+    private javax.swing.JButton jButtonLogin;
+    private javax.swing.JButton jButtonRegister;
     private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelUser;
     private javax.swing.JPasswordField jPasswordField1;

@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/grm-5/Documents/Projects/MediContact/src/interfaz/Login.java</file>
-            <file>file:/C:/Users/grm-5/Documents/Projects/MediContact/src/medicontact/paciente.java</file>
-            <file>file:/C:/Users/grm-5/Documents/Projects/MediContact/src/medicontact/medicontact.java</file>
+            <file>file:/C:/Users/grm-5/Documents/GitHub/MediContact/src/medicontact/paciente.java</file>
+            <file>file:/C:/Users/grm-5/Documents/GitHub/MediContact/src/medicontact/loginInfo.java</file>
+            <file>file:/C:/Users/grm-5/Documents/GitHub/MediContact/src/interfaz/Register.java</file>
+            <file>file:/C:/Users/grm-5/Documents/GitHub/MediContact/src/interfaz/Login.java</file>
+            <file>file:/C:/Users/grm-5/Documents/GitHub/MediContact/src/medicontact/medicontact.java</file>
+            <file>file:/C:/Users/grm-5/Documents/GitHub/MediContact/src/medicontact/medico.java</file>
         </group>
     </open-files>
 </project-private>
