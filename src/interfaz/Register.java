@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import medicontact.loginInfo;
  * @author grm-5
  */
 public class Register extends javax.swing.JFrame {
-    
+
     private String user;
     private char[] password;
     private String pass;
@@ -26,8 +27,8 @@ public class Register extends javax.swing.JFrame {
     private String apellidop;
     private String apellidom;
     private int cedula;
-    
-    
+
+
     public Register() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -247,16 +248,17 @@ public class Register extends javax.swing.JFrame {
             apellidop = jTextFieldApellidos.getText();
             apellidom = jTextFieldApellidos1.getText();
             cedula = Integer.parseInt(apellidom);
-            
+
             loginInfo nwusr = new loginInfo();
             nwusr.setUser(user);
             nwusr.setPassword(pass);
             nwusr.setNombre(nombre);
             nwusr.setApellidop(apellidop);
             nwusr.setCedula(cedula);
-            
+
             try {
-                FileOutputStream fileOut = new FileOutputStream("/temp/user.ser");
+                File file = new File("C://test/user.ser");
+                FileOutputStream fileOut = new FileOutputStream("C://test/user.ser");
                 ObjectOutputStream out = new ObjectOutputStream(fileOut);
                 out.writeObject(nwusr);
                 out.close();
@@ -267,7 +269,7 @@ public class Register extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
             }
-    
+
             JOptionPane.showMessageDialog(null, "Has Completado el registro");
             this.setVisible(false);
             new Login().setVisible(true);
@@ -288,11 +290,11 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        
+
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCheckBox1MouseClicked
-        
+
     }//GEN-LAST:event_jCheckBox1MouseClicked
 
     /**
@@ -302,7 +304,7 @@ public class Register extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

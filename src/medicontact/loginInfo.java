@@ -9,7 +9,7 @@ package medicontact;
  *
  * @author grm-5
  */
-public class loginInfo extends medico{
+public class loginInfo extends medico implements java.io.Serializable{
     private String user;
     private String password;
 
