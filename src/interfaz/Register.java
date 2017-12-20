@@ -5,15 +5,29 @@
  */
 package interfaz;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import medicontact.loginInfo;
 /**
  *
  * @author grm-5
  */
 public class Register extends javax.swing.JFrame {
-    boolean terms=false;
-    /**
-     * Creates new form Register
-     */
+    
+    private String user;
+    private char[] password;
+    private String pass;
+    private String nombre;
+    private String apellidop;
+    private String apellidom;
+    private int cedula;
+    
+    
     public Register() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -222,7 +236,42 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButtonRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegisterMouseClicked
-        
+        if(jCheckBox1.isSelected()==false){
+            JOptionPane.showMessageDialog(null, "No has aceptado los terminos."+"vaya no es como que haya que leerlos");
+        }
+        if(jCheckBox1.isSelected()==true){
+            user = jTextFieldName.getText();
+            password = jPasswordField1.getPassword();
+            pass = new String(password);
+            nombre = jTextFieldNombre.getText();
+            apellidop = jTextFieldApellidos.getText();
+            apellidom = jTextFieldApellidos1.getText();
+            cedula = Integer.parseInt(apellidom);
+            
+            loginInfo nwusr = new loginInfo();
+            nwusr.setUser(user);
+            nwusr.setPassword(pass);
+            nwusr.setNombre(nombre);
+            nwusr.setApellidop(apellidop);
+            nwusr.setCedula(cedula);
+            
+            try {
+                FileOutputStream fileOut = new FileOutputStream("/temp/user.ser");
+                ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                out.writeObject(nwusr);
+                out.close();
+                fileOut.close();
+                System.out.printf("Serialized data is saved");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    
+            JOptionPane.showMessageDialog(null, "Has Completado el registro");
+            this.setVisible(false);
+            new Login().setVisible(true);
+        }
     }//GEN-LAST:event_jButtonRegisterMouseClicked
 
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
